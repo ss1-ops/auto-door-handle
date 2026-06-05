@@ -83,6 +83,7 @@ Files under `hardware/stl/` (GitHub renders these interactively in 3D — click 
 - `Door Handle Toothed Arc.stl`
 
 ## Repo Structure
+## Repo Structure
 
 ```
 .
@@ -98,6 +99,7 @@ Files under `hardware/stl/` (GitHub renders these interactively in 3D — click 
 └── ios-app/
     └── OpenSesame/                    # SwiftUI iPhone app (Xcode project + video assets)
 ```
+
 
 ## Building & Running
 
