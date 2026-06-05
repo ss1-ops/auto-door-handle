@@ -96,7 +96,7 @@ Files under `hardware/stl/` (GitHub renders these interactively in 3D — click 
 │   └── Door_Handle_BLE_Code/
 │       └── Door_Handle_BLE_Code.ino   # ESP32-S3 Arduino firmware (BLE + OTA + motor)
 └── ios-app/
-    └── OpenSesame/                    # SwiftUI iPhone app (Xcode + video assets)
+    └── OpenSesame/                    # SwiftUI iPhone app (Xcode project + video assets)
 ```
 
 ## Building & Running
