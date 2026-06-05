@@ -56,7 +56,7 @@ Key behaviors:
 - Limit-switch homing with 10 s safety timeout.
 - LED feedback: solid red (closed), green flash (opening), solid green (open), yellow flash (closing).
 
-The firmware is self-contained in `Door_Handle_BLE_Code/Door_Handle_BLE_Code.ino`.
+The firmware lives in `firmware/Door_Handle_BLE_Code/Door_Handle_BLE_Code.ino`.
 
 ## iOS App (SwiftUI)
 
@@ -68,13 +68,13 @@ The firmware is self-contained in `Door_Handle_BLE_Code/Door_Handle_BLE_Code.ino
 - Core Data persistence layer.
 - Clean, minimal UI designed for quick one-tap use.
 
-Project is in the `OpenSesame/` directory (Xcode project).
+Project is in the `ios-app/OpenSesame/` directory (Xcode project).
 
 ## 3D-Printed Mechanical Parts
 
 All parts were designed for easy FDM printing and apartment-door installation. The mechanism uses a toothed arc on the existing handle + spur gear on the motor shaft.
 
-Files at repo root (GitHub renders these interactively in 3D — click any `.stl`):
+Files under `hardware/stl/` (GitHub renders these interactively in 3D — click any `.stl`):
 
 - `Door Handle - Base Plate.stl`
 - `Door Handle - Motor Mount Final.stl`
@@ -89,29 +89,27 @@ Files at repo root (GitHub renders these interactively in 3D — click any `.stl
 ├── README.md
 ├── LICENSE
 ├── .gitignore
-├── Door Handle - *.stl          # 5 mechanical parts (view in 3D on GitHub)
-├── Door_Handle_BLE_Code/        # ESP32-S3 Arduino firmware (.ino)
-│   └── Door_Handle_BLE_Code.ino
-└── OpenSesame/                  # SwiftUI iPhone app (Xcode project + assets)
-    ├── OpenSesame/
-    │   ├── OpenSesameApp.swift
-    │   ├── ContentView.swift
-    │   ├── BLEManager... (and supporting files)
-    │   ├── Assets.xcassets/...
-    │   └── *.mov (demo animation clips)
+├── hardware/
+│   └── stl/
+│       └── Door Handle - *.stl     # 5 mechanical parts (view in 3D on GitHub)
+├── firmware/
+│   └── Door_Handle_BLE_Code/
+│       └── Door_Handle_BLE_Code.ino   # ESP32-S3 Arduino firmware (BLE + OTA + motor)
+└── ios-app/
+    └── OpenSesame/                    # SwiftUI iPhone app (Xcode + video assets)
 ```
 
 ## Building & Running
 
 ### Firmware
-1. Open `Door_Handle_BLE_Code/Door_Handle_BLE_Code.ino` in Arduino IDE (or PlatformIO / Arduino CLI).
+1. Open `firmware/Door_Handle_BLE_Code/Door_Handle_BLE_Code.ino` in Arduino IDE (or PlatformIO / Arduino CLI).
 2. Select ESP32-S3 board, appropriate partition scheme (for OTA + BLE).
 3. Update WiFi credentials if needed for your network (current: `WAVLINK-N`).
 4. Flash over USB.
 5. After first boot you can use ElegantOTA for future updates.
 
 ### iOS App
-1. Open `OpenSesame/OpenSesame.xcodeproj` in Xcode.
+1. Open `ios-app/OpenSesame/OpenSesame.xcodeproj` in Xcode.
 2. Select your iPhone target, sign with your developer account (requires BLE / Local Network capability).
 3. Build & run. The app will request Bluetooth permission on first launch.
 
