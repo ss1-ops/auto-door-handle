@@ -99,7 +99,6 @@ Files under `hardware/stl/` (GitHub renders these interactively in 3D — click 
     └── OpenSesame/                    # SwiftUI iPhone app (Xcode project + video assets)
 ```
 
-
 ## Building & Running
 
 ### Firmware
