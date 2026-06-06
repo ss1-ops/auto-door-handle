@@ -83,7 +83,6 @@ Files under `hardware/stl/` (GitHub renders these interactively in 3D — click 
 - `Door Handle Toothed Arc.stl`
 
 ## Repo Structure
-## Repo Structure
 
 ```
 .
